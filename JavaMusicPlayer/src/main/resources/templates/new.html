@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+        <meta charset="utf-8" />
+        <title>Adding New Song</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    
+    <body style="background-color: #99ccff;textalign:center;color:#cc0000;border:2px solid Tomato;">
+        <div align="center">
+            <h1><b>Create New Song</b></h1>
+            <br />
+            <div class="col-sm-4">
+                <form action="#" th:action="@{/save}" th:object="${Song}" method="post">
+                    <div alight="left">
+                        <tr>
+                            <label class="form-label" >Song Title</label>
+                            <td>
+                                <input type="hidden" th:field="*{id}" />
+                                <input type="text" th:field="*{title}" class="formcontrol" placeholder="Song Title" />
+                            </td>
+                        </tr>
+                    </div>
+                    
+                    <div alight="left">
+                        <tr>
+                            <label class="form-label" >Song Artist</label>
+                            <td>
+                                <input type="text" th:field="*{artist}" class="formcontrol" placeholder="Song Artist" />
+                            </td>
+                        </tr>
+                    </div>
+                    
+                    <div alight="left">
+                        <tr>
+                            <label class="form-label" >Song Album</label>
+                            <td>
+                                <input type="text" th:field="*{album}" class="formcontrol" placeholder="Song Album" />
+                            </td>
+                        </tr>
+                    </div>
+                    
+                    <div alight="left">
+                        <tr>
+                            <label class="form-label" >Song Year</label>
+                            <td>
+                                <input type="text" th:field="*{year}" class="formcontrol" placeholder="Song Year" />
+                            </td>
+                        </tr>
+                    </div>
+                    
+                    <br>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit" class="btn btninfo">Save</button> 
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html> 

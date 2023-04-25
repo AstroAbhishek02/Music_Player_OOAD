@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	</head>
+	
+	<body style="background-color: #99ccff;textalign:center;color:#cc0000;border:2px solid Tomato;">
+		<div>
+			<h1><b>Spring Boot System - Music Player Management System</b></h1>
+			<tr>
+				<div>
+					<button><h3><a th:href="@{'/new'}">Add new</a></h3> </button>
+				</div>
+				<br>
+			</tr>
+			<center>
+				<tr>
+					<div class="col-sm-5" align = "center">
+						<div class="panel-body" align = "center" >
+							<table class="table">
+								<thead class="thead-dark">
+									<tr>
+										<th>Song ID</th>
+										<th>Song Title</th>
+										<th>Song Artist</th>
+										<th>Song Album</th>
+										<th>Song Year</th>
+										<th>Edit</th>
+										<th>Delete</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr th:each="Song : ${listSong }">
+										<td th:text="${Song.id}">Song ID</td>
+										<td th:text="${Song.title}">Song Title</td>
+										<td th:text="${Song.artist}">Song Artist</td>
+										<td th:text="${Song.album}">Song Album</td>
+										<td th:text="${Song.year}">Song Year</td>
+										<td><a th:href="@{'/edit/' + ${Song.id}}">Edit</a></td>
+										<td><a th:href="@{'/delete/' + ${Song.id}}">Delete</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</tr>
+			</center>
+		</table>
+	</body>
+</html>
